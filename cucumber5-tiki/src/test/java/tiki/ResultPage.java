@@ -17,8 +17,8 @@ public class ResultPage{
 	}
 	
 	@Step
-	public void chooseThe5thProduct() {
-		resultPageAction.clickOn5thProduct();
+	public void chooseThe2thProduct() {
+		resultPageAction.clickOn2thProduct();
 	}
 
 }

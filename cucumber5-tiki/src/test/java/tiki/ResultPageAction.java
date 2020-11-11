@@ -1,14 +1,16 @@
 package tiki;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
 import net.thucydides.core.pages.PageObject;
 
 public class ResultPageAction extends PageObject{
 	
-	//public String oldProductName = $(By.xpath("(//p[@class='title'])[5]")).getText();
-
+	WebDriver driver;
+	
+	public static String oldName;
+	
 
 	public void checkOnTikiNow() {
 		$(By.xpath("//span[@class='tikicon icon-tikinow-19']")).click();
@@ -26,8 +28,18 @@ public class ResultPageAction extends PageObject{
 		}
 	}
 	
-	public void clickOn5thProduct() {
-		$(By.xpath("(//a[@class='search-a-product-item'])[5]")).click();
+	public void clickOn2thProduct() {
+		getOldName();
+		$(By.xpath("(//a[@class='search-a-product-item'])[2]")).click();
+	}
+	
+	public void getOldName() {
+		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
+		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
+		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
+		//$(By.xpath("//div[@class='filter-list-box']")).sendKeys(Keys.PAGE_DOWN);
+		//$(By.xpath("//div[@class='filter-list-box']")).sendKeys(Keys.PAGE_DOWN);
+		oldName = $(By.xpath("(//p[@class='title'])[2]")).getText();
 	}
 	
 }

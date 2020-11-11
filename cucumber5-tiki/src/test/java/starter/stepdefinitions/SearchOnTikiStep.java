@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import tiki.HomePage;
 import tiki.LocationPopup;
+import tiki.ProductDetailPage;
 import tiki.ResultPage;
 
 public class SearchOnTikiStep {
@@ -19,6 +20,9 @@ public class SearchOnTikiStep {
 	
 	@Steps
 	ResultPage resultPage;
+	
+	@Steps
+	ProductDetailPage product;
 	
 
 	
@@ -42,9 +46,19 @@ public class SearchOnTikiStep {
 		locationPopup.chooseLocation();
 	}
 
-	@Then("he should be back to search result page")
+	@And("he should be back to search result page")
 	public void he_should_be_back_to_search_result_page() {
 		resultPage.verifyPage();
+	}
+	
+	@And("he choose the 2th product")
+	public void he_choose_the_2th_product() {
+		resultPage.chooseThe2thProduct();
+	}
+	
+	@Then("he verify the product")
+	public void he_verify_the_product() {
+		product.verifyTheProduct();
 	}
 
 	
