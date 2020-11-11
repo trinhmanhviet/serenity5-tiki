@@ -37,8 +37,6 @@ public class ResultPageAction extends PageObject{
 		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
 		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
 		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
-		//$(By.xpath("//div[@class='filter-list-box']")).sendKeys(Keys.PAGE_DOWN);
-		//$(By.xpath("//div[@class='filter-list-box']")).sendKeys(Keys.PAGE_DOWN);
 		oldName = $(By.xpath("(//p[@class='title'])[2]")).getText();
 	}
 	
