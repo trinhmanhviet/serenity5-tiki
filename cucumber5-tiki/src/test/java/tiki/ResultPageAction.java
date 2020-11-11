@@ -7,7 +7,7 @@ import net.thucydides.core.pages.PageObject;
 
 public class ResultPageAction extends PageObject{
 	
-	WebDriver driver;
+	//WebDriver driver; remove xem verifyPage() co hoat dong khong
 	
 	public static String oldName;
 	
@@ -38,6 +38,11 @@ public class ResultPageAction extends PageObject{
 		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
 		$(By.tagName("body")).sendKeys(Keys.ARROW_DOWN);
 		oldName = $(By.xpath("(//p[@class='title'])[2]")).getText();
+		if(oldName.length()>25){
+			oldName = oldName.substring(0, 25);
+		}else {
+			oldName = oldName.substring(0, 15);
+		}
 	}
 	
 }

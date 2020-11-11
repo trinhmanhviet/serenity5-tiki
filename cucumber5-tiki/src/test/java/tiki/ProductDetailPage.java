@@ -10,5 +10,10 @@ public class ProductDetailPage {
 	public void verifyTheProduct() {
 		productDetailAction.verifyProduct();
 	}
+	
+	@Step
+	public void addToCart() throws Exception {
+		productDetailAction.addToCart();
+	}
 
 }

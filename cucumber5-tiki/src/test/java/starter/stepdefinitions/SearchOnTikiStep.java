@@ -22,7 +22,7 @@ public class SearchOnTikiStep {
 	ResultPage resultPage;
 	
 	@Steps
-	ProductDetailPage product;
+	ProductDetailPage productPage;
 	
 
 	
@@ -56,9 +56,14 @@ public class SearchOnTikiStep {
 		resultPage.chooseThe2thProduct();
 	}
 	
-	@Then("he verify the product")
+	@And("he verify the product")
 	public void he_verify_the_product() {
-		product.verifyTheProduct();
+		productPage.verifyTheProduct();
+	}
+	
+	@Then("if the produce is right, he add {int} of them to cart")
+	public void if_the_produce_is_right_he_add_of_them_to_cart(Integer int1) throws Exception {
+		productPage.addToCart();
 	}
 
 	
